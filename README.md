@@ -1,2 +1,3 @@
 # final-project
-this should cause a conflict
+Test1 first change
+test2 second change
