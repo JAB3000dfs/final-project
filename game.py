@@ -27,8 +27,6 @@ def place_troops(screen):
         pygame.display.update()
 
 def start_game():
-    spongebob = pygame.image.load("spongebob.png")
-    spongebob = pygame.transform.scale(spongebob, (60, 54))
     p = 500
     q = 500
     spongebob_position = [p, q]
@@ -53,8 +51,18 @@ def start_game():
                     mouse_x = pygame.mouse.get_pos()[0]
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_SPACE:
-                        q -= 10
-                        screen.blit(spongebob, spongebob_position)
+                        for i in range(47):
+                            # Loads the Spongebob sprite
+                            spongebob = pygame.image.load("spongebob.png")
+
+                            # Resizes the sprite to be 200x187
+                            spongebob = pygame.transform.scale(spongebob, (60, 54))
+                            spongebob_position = [p, q]
+                            q -= 10
+                            # Sets the sprite position
+
+                            screen.blit(spongebob, spongebob_position)
+                            pygame.display.update()
 
             # Create ally building
 
