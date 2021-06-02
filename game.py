@@ -71,7 +71,11 @@ def start_game():
             # Create ally building
 
             pygame.draw.circle(screen, white, (mouse_last_position, b), 10)
-            b = b - 1
+            if (check == True):
+                b = b - 20
+            else:
+                b = b - 1
+
             mouse_last_position = mouse_x
             pygame.draw.circle(screen, black, (mouse_x, b), 10)
 
@@ -81,11 +85,14 @@ def start_game():
 
             # Create enemy building)s
             pygame.draw.circle(screen, white, (a, y), 10)
-            y = y + 1
+            if (check == True):
+                y = y + 20
+            else:
+                y = y + 1
             pygame.draw.circle(screen, black, (a, y), 10)
 
 
-            if (y == 300):
+            if (y >= 300):
                 pygame.draw.circle(screen, white, (a, y), 10)
                 pygame.draw.circle(screen, white, (mouse_last_position, b), 10)
                 break
