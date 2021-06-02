@@ -44,6 +44,7 @@ def start_game():
         y = 100
         a = random.randint(250, 751)
         b = 500
+        mouse_last_position = mouse_x
         while start_game == True:
             for event in pygame.event.get():
                 if event.type == pygame.MOUSEMOTION:
@@ -51,8 +52,10 @@ def start_game():
                     mouse_x = pygame.mouse.get_pos()[0]
 
             # Create ally building
-            pygame.draw.circle(screen, white, (mouse_x, b), 10)
-            b = b - 1
+
+            pygame.draw.circle(screen, white, (mouse_last_position, b), 10)
+            b = b - 0.25
+            mouse_last_position = mouse_x
             pygame.draw.circle(screen, black, (mouse_x, b), 10)
 
 
@@ -61,7 +64,7 @@ def start_game():
 
             # Create enemy building)s
             pygame.draw.circle(screen, white, (a, y), 10)
-            y = y + 1
+            y = y + 0.25
             pygame.draw.circle(screen, black, (a, y), 10)
 
 
@@ -74,11 +77,9 @@ def start_game():
                         screen.blit(spongebob, spongebob_position)
                         check = True
 
-
-
-
             if (y == 300):
                 pygame.draw.circle(screen, white, (a, y), 10)
+                pygame.draw.circle(screen, white, (mouse_last_position, b), 10)
                 break
 
             pygame.display.update()
