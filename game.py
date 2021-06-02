@@ -1,5 +1,6 @@
 # Imports
 import pygame
+import random
 
 # Hitponts function
 # Hitpoints decrease by 5 every second touched by troop or bullet
@@ -26,13 +27,18 @@ def place_troops(screen):
         pygame.display.update()
 
 def start_game():
+    mouse_x = 500
     start_game = True
     while True:
         x = 500
         y = 100
-        a = 500
+        a = random.randint(250, 751)
         b = 500
         while start_game == True:
+            for event in pygame.event.get():
+                if event.type == pygame.MOUSEMOTION:
+                    # Gets the coordinates of the mouse
+                    mouse_x = pygame.mouse.get_pos()[0]
             screen = pygame.display.set_mode((1000, 600))
             screen.fill(white)
 
@@ -40,7 +46,7 @@ def start_game():
             pygame.draw.polygon(screen, colour, ((250, 600), (750, 600), (750, 531), (250, 531)))
             pygame.draw.line(screen, black, (495, 531), (495, 500), 10)
 
-            pygame.draw.circle(screen, black, (a, b), 10)
+            pygame.draw.circle(screen, black, (mouse_x, b), 10)
             b = b - 1
 
             # Assign building number of hitpoints
@@ -50,7 +56,7 @@ def start_game():
             pygame.draw.polygon(screen, colour, ((250, 0), (750, 0), (750, 69), (250, 69)))
             pygame.draw.line(screen, black, (495, 69), (495, 100), 10)
 
-            pygame.draw.circle(screen, black, (x, y), 10)
+            pygame.draw.circle(screen, black, (a, y), 10)
             y = y + 1
 
             for event in pygame.event.get():
@@ -62,12 +68,6 @@ def start_game():
             if (y == 300):
                 break
 
-            while (start_game == True):
-                for event in pygame.event.get():
-                    # Checks for keys that have been pressed
-                    if event.type == pygame.KEYDOWN:
-                        if event.key == pygame.K_SPACE:
-                            place_troops(screen)
             pygame.display.update()
 
     # Assign building number of hitpoints
