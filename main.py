@@ -53,6 +53,7 @@ while True:
         if event.type == pygame.MOUSEBUTTONDOWN:
             # Checks whether the start button is clicked
             if (420 < mouse_x < 580 and 395 < mouse_y < 405):
+
                 start_game()
 
 

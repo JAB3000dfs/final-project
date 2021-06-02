@@ -51,18 +51,20 @@ def start_game():
                     mouse_x = pygame.mouse.get_pos()[0]
 
             # Create ally building
-
-
-            pygame.draw.circle(screen, black, (mouse_x, b), 10)
+            pygame.draw.circle(screen, white, (mouse_x, b), 10)
             b = b - 1
+            pygame.draw.circle(screen, black, (mouse_x, b), 10)
+
 
             # Assign building number of hitpoints
             # When hitpoints go to 0 building disappears you won screen appears
 
             # Create enemy building)s
-
-            pygame.draw.circle(screen, black, (a, y), 10)
+            pygame.draw.circle(screen, white, (a, y), 10)
             y = y + 1
+            pygame.draw.circle(screen, black, (a, y), 10)
+
+
 
             for event in pygame.event.get():
                 # Checks for keys that have been pressed
@@ -71,14 +73,12 @@ def start_game():
                         q -= 10
                         screen.blit(spongebob, spongebob_position)
                         check = True
-            pygame.draw.circle(screen, white, (a, y), 10)
-            y = y + 1
-            pygame.draw.circle(screen, white, (mouse_x, b), 10)
-            b = b - 1
+
 
 
 
             if (y == 300):
+                pygame.draw.circle(screen, white, (a, y), 10)
                 break
 
             pygame.display.update()
