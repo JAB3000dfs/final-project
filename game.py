@@ -27,10 +27,14 @@ def place_troops(screen):
         pygame.display.update()
 
 def start_game():
+    spongebob = pygame.image.load("spongebob.png")
+    spongebob = pygame.transform.scale(spongebob, (60, 54))
+    p = 500
+    q = 500
+    spongebob_position = [p, q]
     mouse_x = 500
     start_game = True
     while True:
-        x = 500
         y = 100
         a = random.randint(250, 751)
         b = 500
@@ -63,7 +67,9 @@ def start_game():
                 # Checks for keys that have been pressed
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_SPACE:
-                        place_troops(screen)
+                        q -= 10
+                        screen.blit(spongebob, spongebob_position)
+
 
             if (y == 300):
                 break
