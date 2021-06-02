@@ -25,7 +25,6 @@ def place_troops(screen):
         screen.blit(spongebob, spongebob_position)
         pygame.display.update()
 
-
 def start_game():
     start_game = True
     while True:
@@ -63,6 +62,12 @@ def start_game():
             if (y == 300):
                 break
 
+            while (start_game == True):
+                for event in pygame.event.get():
+                    # Checks for keys that have been pressed
+                    if event.type == pygame.KEYDOWN:
+                        if event.key == pygame.K_SPACE:
+                            place_troops(screen)
             pygame.display.update()
 
     # Assign building number of hitpoints

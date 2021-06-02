@@ -1,6 +1,6 @@
 # Imports
 import pygame
-from game import start_game
+from Betterperson import start_game
 from game import place_troops
 
 pygame.init()
@@ -54,14 +54,7 @@ while True:
         if event.type == pygame.MOUSEBUTTONDOWN:
             # Checks whether the start button is clicked
             if (420 < mouse_x < 580 and 395 < mouse_y < 405):
-
                 start_game()
-                while (start_game == True):
-                    for event in pygame.event.get():
-                        # Checks for keys that have been pressed
-                        if event.type == pygame.KEYDOWN:
-                            if event.key == pygame.K_SPACE:
-                                place_troops(screen)
 
 
             # Checks whether the instructions button is clicked
