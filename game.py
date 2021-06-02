@@ -43,6 +43,9 @@ def start_game():
         y = 100
         a = random.randint(250, 751)
         b = 500
+        p = 500
+        q = 500
+        check = False
         mouse_last_position = mouse_x
         while start_game == True:
             for event in pygame.event.get():
@@ -51,21 +54,24 @@ def start_game():
                     mouse_x = pygame.mouse.get_pos()[0]
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_SPACE:
-                        # Loads the Spongebob sprite
-                        spongebob = pygame.image.load("spongebob.png")
+                        check = True
+            if check == True:
+                # Loads the Spongebob sprite
+                spongebob = pygame.image.load("spongebob.png")
 
-                        # Resizes the sprite to be 200x187
-                        spongebob = pygame.transform.scale(spongebob, (60, 54))
-                        spongebob_position = [p, q]
-                        q -= 10
-                        # Sets the sprite position
+                # Resizes the sprite to be 200x187
+                spongebob = pygame.transform.scale(spongebob, (60, 54))
+                spongebob_position = [p, q]
+                q -= 10
+                # Sets the sprite position
 
-                        screen.blit(spongebob, spongebob_position)
+                screen.blit(spongebob, spongebob_position)
+
 
             # Create ally building
 
             pygame.draw.circle(screen, white, (mouse_last_position, b), 10)
-            b = b - 0.25
+            b = b - 1
             mouse_last_position = mouse_x
             pygame.draw.circle(screen, black, (mouse_x, b), 10)
 
@@ -75,7 +81,7 @@ def start_game():
 
             # Create enemy building)s
             pygame.draw.circle(screen, white, (a, y), 10)
-            y = y + 0.25
+            y = y + 1
             pygame.draw.circle(screen, black, (a, y), 10)
 
 
