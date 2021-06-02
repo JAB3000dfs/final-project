@@ -1,6 +1,6 @@
 # Imports
 import pygame
-from Betterperson import start_game
+from game import start_game
 from game import place_troops
 
 pygame.init()
