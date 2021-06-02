@@ -1,5 +1,6 @@
 # Imports
 import pygame
+import random
 
 # Hitponts function
 # Hitpoints decrease by 5 every second touched by troop or bullet
@@ -32,7 +33,7 @@ def start_game():
     while True:
         x = 500
         y = 100
-        a = 500
+        a = random.randint(250,751)
         b = 500
         while start_game == True:
             for event in pygame.event.get():
@@ -56,7 +57,7 @@ def start_game():
             pygame.draw.polygon(screen, colour, ((250, 0), (750, 0), (750, 69), (250, 69)))
             pygame.draw.line(screen, black, (495, 69), (495, 100), 10)
 
-            pygame.draw.circle(screen, black, (mouse_x, y), 10)
+            pygame.draw.circle(screen, black, (a, y), 10)
             y = y + 1
 
             for event in pygame.event.get():
