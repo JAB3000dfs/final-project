@@ -40,7 +40,7 @@ def start_game():
             pygame.draw.polygon(screen, colour, ((250, 600), (750, 600), (750, 531), (250, 531)))
             pygame.draw.line(screen, black, (495, 531), (495, 500), 10)
 
-            pygame.draw.circle(screen, black, (a, b), 1)
+            pygame.draw.circle(screen, black, (a, b), 10)
             b = b - 1
 
             # Assign building number of hitpoints
@@ -50,7 +50,7 @@ def start_game():
             pygame.draw.polygon(screen, colour, ((250, 0), (750, 0), (750, 69), (250, 69)))
             pygame.draw.line(screen, black, (495, 69), (495, 100), 10)
 
-            pygame.draw.circle(screen, black, (x, y), 1)
+            pygame.draw.circle(screen, black, (x, y), 10)
             y = y + 1
 
             for event in pygame.event.get():
