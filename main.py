@@ -1,7 +1,6 @@
 # Imports
 import pygame
 from game import start_game
-from game import place_troops
 
 pygame.init()
 

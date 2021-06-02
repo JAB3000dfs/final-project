@@ -26,14 +26,12 @@ def place_troops(screen):
         screen.blit(spongebob, spongebob_position)
         pygame.display.update()
 
-
 def start_game():
     mouse_x = 500
     start_game = True
     while True:
-        x = 500
         y = 100
-        a = random.randint(250,751)
+        a = random.randint(250, 751)
         b = 500
         while start_game == True:
             for event in pygame.event.get():

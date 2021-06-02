@@ -33,7 +33,13 @@ def start_game():
     q = 500
     spongebob_position = [p, q]
     mouse_x = 500
+    screen = pygame.display.set_mode((1000, 600))
+    screen.fill(white)
     start_game = True
+    pygame.draw.polygon(screen, colour, ((250, 600), (750, 600), (750, 531), (250, 531)))
+    pygame.draw.line(screen, black, (495, 531), (495, 500), 10)
+    pygame.draw.polygon(screen, colour, ((250, 0), (750, 0), (750, 69), (250, 69)))
+    pygame.draw.line(screen, black, (495, 69), (495, 100), 10)
     while True:
         y = 100
         a = random.randint(250, 751)
@@ -43,12 +49,9 @@ def start_game():
                 if event.type == pygame.MOUSEMOTION:
                     # Gets the coordinates of the mouse
                     mouse_x = pygame.mouse.get_pos()[0]
-            screen = pygame.display.set_mode((1000, 600))
-            screen.fill(white)
 
             # Create ally building
-            pygame.draw.polygon(screen, colour, ((250, 600), (750, 600), (750, 531), (250, 531)))
-            pygame.draw.line(screen, black, (495, 531), (495, 500), 10)
+
 
             pygame.draw.circle(screen, black, (mouse_x, b), 10)
             b = b - 1
@@ -57,8 +60,6 @@ def start_game():
             # When hitpoints go to 0 building disappears you won screen appears
 
             # Create enemy building)s
-            pygame.draw.polygon(screen, colour, ((250, 0), (750, 0), (750, 69), (250, 69)))
-            pygame.draw.line(screen, black, (495, 69), (495, 100), 10)
 
             pygame.draw.circle(screen, black, (a, y), 10)
             y = y + 1
@@ -69,6 +70,12 @@ def start_game():
                     if event.key == pygame.K_SPACE:
                         q -= 10
                         screen.blit(spongebob, spongebob_position)
+                        check = True
+            pygame.draw.circle(screen, white, (a, y), 10)
+            y = y + 1
+            pygame.draw.circle(screen, white, (mouse_x, b), 10)
+            b = b - 1
+
 
 
             if (y == 300):
