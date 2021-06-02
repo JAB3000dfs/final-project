@@ -40,8 +40,8 @@ def start_game():
             pygame.draw.polygon(screen, colour, ((250, 600), (750, 600), (750, 531), (250, 531)))
             pygame.draw.line(screen, black, (495, 531), (495, 500), 10)
 
-            pygame.draw.circle(screen, black, (a, b), 10)
-            b = b - 10
+            pygame.draw.circle(screen, black, (a, b), 1)
+            b = b - 1
 
             # Assign building number of hitpoints
             # When hitpoints go to 0 building disappears you won screen appears
@@ -50,8 +50,8 @@ def start_game():
             pygame.draw.polygon(screen, colour, ((250, 0), (750, 0), (750, 69), (250, 69)))
             pygame.draw.line(screen, black, (495, 69), (495, 100), 10)
 
-            pygame.draw.circle(screen, black, (x, y), 10)
-            y = y + 10
+            pygame.draw.circle(screen, black, (x, y), 1)
+            y = y + 1
 
             for event in pygame.event.get():
                 # Checks for keys that have been pressed
