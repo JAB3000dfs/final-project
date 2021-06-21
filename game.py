@@ -88,7 +88,7 @@ def start_game():
 
             else:
                 y = y + 1
-            pygame.draw.circle(screen, black, (a, y), 10)
+
 
 
             if (y >= 300):
