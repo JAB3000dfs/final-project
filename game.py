@@ -8,7 +8,6 @@ white = (255, 255, 255)
 colour = (69, 5, 189)
 black = (0, 0, 0)
 
-
 def place_troops(screen):
     p = 500
     q = 500
@@ -38,7 +37,7 @@ def start_game():
     pygame.draw.line(screen, black, (495, 531), (495, 500), 10)
     pygame.draw.polygon(screen, colour, ((250, 0), (750, 0), (750, 69), (250, 69)))
     pygame.draw.line(screen, black, (495, 69), (495, 100), 10)
-    check = True
+    countdown = 0
     while True:
         y = 100
         a = random.randint(250, 751)
@@ -54,8 +53,8 @@ def start_game():
                     mouse_x = pygame.mouse.get_pos()[0]
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_SPACE:
-                        check = True
-            if check == True:
+                        countdown = 15
+            if countdown > 0:
                 # Loads the Spongebob sprite
                 spongebob = pygame.image.load("spongebob.png")
 
@@ -64,8 +63,8 @@ def start_game():
                 spongebob_position = [p, q]
                 q -= 10
                 # Sets the sprite position
-
                 screen.blit(spongebob, spongebob_position)
+                countdown = countdown - 1
 
 
             # Create ally building
@@ -87,6 +86,7 @@ def start_game():
             pygame.draw.circle(screen, white, (a, y), 10)
             if (check == True):
                 y = y + 20
+
             else:
                 y = y + 1
             pygame.draw.circle(screen, black, (a, y), 10)
@@ -106,7 +106,7 @@ def start_game():
 # Assign Number of Hitpoints
 # Speed of troop
 
-# Direpygame.display.quit()
+# pygame.display.quit()
 
 
 # tower defense class
