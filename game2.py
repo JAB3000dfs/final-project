@@ -4,6 +4,7 @@ import time
 
 def start_game2():
     points = 0
+    strikes = 3
     mouse_x = 0
     mouse_y = 0
     while True:
@@ -24,6 +25,11 @@ def start_game2():
         if mouse_x >= x - 20 and mouse_x <= x + 20 and mouse_y >= x - 20 and mouse_y <= x + 20:
             points += 1
             print("points")
+        else:
+            strikes -= 1
+            if (strikes < 0):
+                screen.fill(black)
+                break
         pygame.display.update()
         while time.time() < t_end:
             pass
