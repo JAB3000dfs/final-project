@@ -82,7 +82,7 @@ def start_game():
             # When hitpoints go to 0 building disappears you won screen appears
 
             # Create enemy building)s
-            pygame.draw.circle(screen, white, (a, y), 10)
+
             if (check == True):
                 y = y + 20
 
