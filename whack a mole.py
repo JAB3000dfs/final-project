@@ -1,7 +1,6 @@
 # Imports
 import pygame
-from game import start_game
-
+from game2 import start_game2
 pygame.init()
 
 # Sets the window screen to
@@ -52,9 +51,7 @@ while True:
         if event.type == pygame.MOUSEBUTTONDOWN:
             # Checks whether the start button is clicked
             if (420 < mouse_x < 580 and 395 < mouse_y < 405):
-
-                start_game()
-
+                start_game2()
 
             # Checks whether the instructions button is clicked
             elif (370 < mouse_x < 630 and 480 < mouse_y < 520):
