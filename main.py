@@ -70,8 +70,7 @@ while True:
                 back_home_rectangle.center = (100, 100)
                 screen.blit(back_home, back_home_rectangle)
 
-            if (50 < mouse_x < 150 and 0 < mouse_y < 600):
                 start_screen()
 
     pygame.display.update()
-    # When start button clicked, start game
+    # When start button clicked, start game            if (50 < mouse_x < 150 and 0 < mouse_y < 600):
