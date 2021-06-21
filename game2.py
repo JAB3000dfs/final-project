@@ -7,7 +7,7 @@ def start_game2():
     black = (0, 0, 0)
     screen = pygame.display.set_mode((1000, 600))
     screen.fill(white)
-    while True:
+    for i in range(5):
         pygame.draw.circle(screen, black, (random.randint(250, 751), random.randint(250, 751)), 10)
         pygame.display.update()
 
