@@ -13,7 +13,7 @@ screen.fill(white)
 # Initial Page Setup
 # Font
 title_font = pygame.font.Font('avgr45w (3).ttf', 100)
-text_font = pygame.font.Font(`'avgr45w (3).ttf', 40)
+text_font = pygame.font.Font('avgr45w (3).ttf', 40)
 text_font.set_bold(True)
 title_font.set_bold(True)
 # Title
