@@ -22,7 +22,7 @@ def start_game2():
         x = random.randint(250, 350)
         y = random.randint(250, 350)
         pygame.draw.circle(screen, black, (x, y), 20)
-        if mouse_x >= x - 20 and mouse_x <= x + 20 and mouse_y >= x - 20 and mouse_y <= x + 20:
+        if mouse_x >= x - 20 and mouse_x <= x + 20 and mouse_y >= y - 20 and mouse_y <= y + 20:
             points += 1
             print("points")
         else:
