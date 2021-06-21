@@ -17,4 +17,3 @@ def start_game2():
         pass
     screen.fill(white)
 
-start_game2()
