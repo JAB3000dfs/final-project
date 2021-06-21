@@ -38,7 +38,6 @@ def start_game():
     pygame.draw.polygon(screen, colour, ((250, 0), (750, 0), (750, 69), (250, 69)))
     pygame.draw.line(screen, black, (495, 69), (495, 100), 10)
     countdown = 0
-    you = True
     while True:
         y = 100
         a = random.randint(250, 751)
@@ -48,14 +47,19 @@ def start_game():
         check = False
         mouse_last_position = mouse_x
         while start_game == True:
-            if you == True:
-                countdown = 40
+            for event in pygame.event.get():
+                if event.type == pygame.MOUSEMOTION:
+                    # Gets the coordinates of the mouse
+                    mouse_x = pygame.mouse.get_pos()[0]
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_SPACE:
+                        countdown = 40
             if countdown > 0:
                 # Loads the Spongebob sprite
                 spongebob = pygame.image.load("spongebob.png")
                 # Resizes the sprite to be 200x187
                 spongebob = pygame.transform.scale(spongebob, (60, 54))
-                spongebob_position = [p, q]
+                spongebob_position = [a, q]
                 q += 10
                 # Sets the sprite position
                 screen.blit(spongebob, spongebob_position)
