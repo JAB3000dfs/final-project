@@ -1,7 +1,7 @@
 import pygame
 
 pygame.init()
-def endgame(points):
+def endgame(points, function):
     # Sets the window screen to
     white = (255, 255, 255)
     black = (0, 0, 0)
@@ -22,7 +22,7 @@ def endgame(points):
     # Create start button sprit
     play_again = text_font.render("Play again", True, black)
 
-    score = score_font.render(str(points), True, black)
+    score = score_font.render("points:" + str(points), True, black)
     score_rectangle = score.get_rect()
     game_over_rectangle = game_over.get_rect()
     game_over_rectangle.center = (500, 200)
@@ -35,5 +35,15 @@ def endgame(points):
     screen.blit(play_again, play_again_rectangle)
 
     while True:
+        # Checks for mouse activity
+        for event in pygame.event.get():
+            if event.type == pygame.MOUSEMOTION:
+                # Gets the coordinates of the mouse
+                mouse_x = pygame.mouse.get_pos()[0]
+                mouse_y = pygame.mouse.get_pos()[1]
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                # Checks whether the start button is clicked
+                if (420 < mouse_x < 580 and 395 < mouse_y < 405):
+                    function
 
         pygame.display.update()
