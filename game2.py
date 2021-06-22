@@ -18,8 +18,8 @@ def start_game2():
                 mouse_x = pygame.mouse.get_pos()[0]
                 mouse_y = pygame.mouse.get_pos()[1]
         black = (0, 0, 0)
-        t_end = time.time() + 4
-        if x + 20 >= mouse_x >= x - 20 and y + 20 >= mouse_y >= y - 20:
+        t_end = time.time() + 2
+        if x + 40 >= mouse_x >= x - 40 and y + 40 >= mouse_y >= y - 40:
             points += 1
             print(points)
         else:
@@ -30,8 +30,7 @@ def start_game2():
         x = random.randint(20, 980)
         y = random.randint(20, 580)
         screen.fill(white)
-        pygame.draw.circle(screen, black, (x, y), 20)
+        pygame.draw.circle(screen, black, (x, y), 40)
         pygame.display.update()
         while time.time() < t_end:
             pass
-
