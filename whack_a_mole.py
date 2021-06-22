@@ -56,4 +56,4 @@ def game():
         pygame.display.update()
         # When start button clicked, start game
 game()
-game()
+
