@@ -1,9 +1,7 @@
 import pygame
-import time
 pygame.init()
-def endgame(points, function):
+def endgame(points):
     # Sets the window screen
-    white = (255, 255, 255)
     black = (0, 0, 0)
     red = (255, 0, 0)
     screen = pygame.display.set_mode((1000, 600))
@@ -23,7 +21,6 @@ def endgame(points, function):
     play_again = text_font.render("Play again", True, black)
     instructions = text_font.render("Instructions", True, black)
 
-
     score = score_font.render("points:" + str(points), True, black)
     score_rectangle = score.get_rect()
     game_over_rectangle = game_over.get_rect()
@@ -38,8 +35,5 @@ def endgame(points, function):
     screen.blit(score, score_rectangle)
     screen.blit(play_again, play_again_rectangle)
     screen.blit(instructions, instructions_rectangle)
-    t_end = time.time() + 4
-    while time.time() < t_end:
-        pass
 
     pygame.display.update()

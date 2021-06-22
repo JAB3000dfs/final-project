@@ -19,6 +19,7 @@ def game():
     # Font
     title_font = pygame.font.Font('avgr45w (3).ttf', 100)
     text_font = pygame.font.Font('avgr45w (3).ttf', 40)
+    instructions_font = pygame.font.Font('avgr45w (3).ttf', 20)
     text_font.set_bold(True)
     title_font.set_bold(True)
 
@@ -39,10 +40,25 @@ def game():
                 # Checks whether the instructions button is clicked
                 elif (370 < mouse_x < 630 and 480 < mouse_y < 520):
                     screen.fill(white)
-                    instructions = text_font.render("stuff", True, black)
+                    instructions = instructions_font.render("Click on the targets as fast as you can", True, black)
                     instructions_rectangle = instructions.get_rect()
                     instructions_rectangle.center = (500, 100)
                     screen.blit(instructions, instructions_rectangle)
+
+                    instructions2 = instructions_font.render("You have less and less time as the game progress's", True, black)
+                    instructions2_rectangle = instructions2.get_rect()
+                    instructions2_rectangle.center = (500, 150)
+                    screen.blit(instructions2, instructions2_rectangle)
+
+                    instructions3 = instructions_font.render("If you don't click on the targets fast enough you lose a life", True, black)
+                    instructions3_rectangle = instructions3.get_rect()
+                    instructions3_rectangle.center = (500, 200)
+                    screen.blit(instructions3, instructions3_rectangle)
+
+                    instructions4 = instructions_font.render("3 deaths and you're out", True, black)
+                    instructions4_rectangle = instructions4.get_rect()
+                    instructions4_rectangle.center = (500, 250)
+                    screen.blit(instructions4, instructions4_rectangle)
 
                     back_home = text_font.render(" <--", True, black)
                     back_home_rectangle = back_home.get_rect()
