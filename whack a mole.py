@@ -31,7 +31,6 @@ start_rectangle.center = (500, 400)
 title_rectangle = title.get_rect()
 title_rectangle.center = (500, 200)
 
-
 # Initial screen function
 def start_screen():
     screen.fill(white)
