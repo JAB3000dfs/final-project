@@ -2,7 +2,7 @@ import pygame
 import time
 pygame.init()
 def endgame(points, function):
-    # Sets the window screen to
+    # Sets the window screen
     white = (255, 255, 255)
     black = (0, 0, 0)
     red = (255, 0, 0)
