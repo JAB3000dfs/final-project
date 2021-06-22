@@ -1,14 +1,13 @@
 import pygame
 
 pygame.init()
-def endgame():
+def endgame(points):
     # Sets the window screen to
     white = (255, 255, 255)
     black = (0, 0, 0)
     red = (255, 0, 0)
     screen = pygame.display.set_mode((1000, 600))
     screen.fill(red)
-    points = 17
     # Initial Page Setup
     # Font
     title_font = pygame.font.Font('avgr45w (3).ttf', 100)

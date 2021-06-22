@@ -28,7 +28,7 @@ def start_game2():
             strikes -= 1
             if (strikes < 0):
                 screen.fill(black)
-                endgame()
+                endgame(points)
                 break
         if points % 3 == 0:
             speed /= 1.25
