@@ -2,26 +2,28 @@
 import pygame
 from game2 import start_game2
 from game2 import start_screen
-import time
+
 pygame.init()
 
+# game function
 def game():
 
-    # Sets the window screen to
+    # Colour variables
     white = (255, 255, 255)
     black = (0, 0, 0)
+
+    # Sets the window screen to 1000 x 600 and fills it in
     screen = pygame.display.set_mode((1000, 600))
     screen.fill(white)
 
-
-    # Initial Page Setup
     # Font
     title_font = pygame.font.Font('avgr45w (3).ttf', 100)
-    text_font = pygame.font.Font('avgr45w (3).ttf', 40)
-    instructions_font = pygame.font.Font('avgr45w (3).ttf', 20)
-    text_font.set_bold(True)
     title_font.set_bold(True)
+    text_font = pygame.font.Font('avgr45w (3).ttf', 40)
+    text_font.set_bold(True)
+    instructions_font = pygame.font.Font('avgr45w (3).ttf', 20)
 
+    # Displays start screen
     start_screen()
 
     while True:
@@ -32,11 +34,11 @@ def game():
                 mouse_x = pygame.mouse.get_pos()[0]
                 mouse_y = pygame.mouse.get_pos()[1]
             if event.type == pygame.MOUSEBUTTONDOWN:
-                # Checks whether the start button is clicked
+                # If the start button is clicked, start game
                 if (420 < mouse_x < 580 and 395 < mouse_y < 405):
                     start_game2()
 
-                # Checks whether the instructions button is clicked
+                # If the instructions button is clicked, display instructions
                 elif (370 < mouse_x < 630 and 480 < mouse_y < 520):
                     screen.fill(white)
                     instructions = instructions_font.render("Click on the targets as fast as you can", True, black)
@@ -64,11 +66,12 @@ def game():
                     back_home_rectangle.center = (100, 100)
                     screen.blit(back_home, back_home_rectangle)
 
-
+                # If the back arrow is clicked, go to start screen
                 if (50 < mouse_x < 150 and 0 < mouse_y < 600):
                     start_screen()
 
         pygame.display.update()
-        # When start button clicked, start game
+
+# Run the whole game function
 game()
 
