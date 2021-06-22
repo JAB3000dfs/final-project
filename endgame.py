@@ -1,5 +1,5 @@
 import pygame
-from game2 import start_game2
+
 pygame.init()
 def endgame(points):
     # Sets the window screen to
@@ -28,21 +28,12 @@ def endgame(points):
     game_over_rectangle.center = (500, 200)
     score_rectangle.center = (500, 400)
     play_again_rectangle = play_again.get_rect()
-    play_again_rectangle.center = (500, 600)
+    play_again_rectangle.center = (500, 500)
 
     screen.blit(game_over, game_over_rectangle)
     screen.blit(score, score_rectangle)
     screen.blit(play_again, play_again_rectangle)
 
     while True:
-        # Checks for mouse activity
-        for event in pygame.event.get():
-            if event.type == pygame.MOUSEMOTION:
-                # Gets the coordinates of the mouse
-                mouse_x = pygame.mouse.get_pos()[0]
-                mouse_y = pygame.mouse.get_pos()[1]
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                # Checks whether the start button is clicked
-                if (420 < mouse_x < 580 and 395 < mouse_y < 405):
-                    start_game2()
+
         pygame.display.update()

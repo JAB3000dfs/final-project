@@ -6,6 +6,7 @@ pygame.init()
 # Sets the window screen to
 white = (255, 255, 255)
 black = (0, 0, 0)
+red = (255, 0, 0)
 screen = pygame.display.set_mode((1000, 600))
 screen.fill(white)
 
@@ -64,6 +65,7 @@ while True:
                 back_home_rectangle = back_home.get_rect()
                 back_home_rectangle.center = (100, 100)
                 screen.blit(back_home, back_home_rectangle)
+
 
             if (50 < mouse_x < 150 and 0 < mouse_y < 600):
                 start_screen()
