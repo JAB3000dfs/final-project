@@ -21,18 +21,23 @@ def endgame(points, function):
 
     # Create start button sprit
     play_again = text_font.render("Play again", True, black)
+    instructions = text_font.render("Instructions", True, black)
+
 
     score = score_font.render("points:" + str(points), True, black)
     score_rectangle = score.get_rect()
     game_over_rectangle = game_over.get_rect()
     game_over_rectangle.center = (500, 200)
-    score_rectangle.center = (500, 400)
+    score_rectangle.center = (500, 300)
     play_again_rectangle = play_again.get_rect()
-    play_again_rectangle.center = (500, 500)
+    play_again_rectangle.center = (500, 400)
+    instructions_rectangle = instructions.get_rect()
+    instructions_rectangle.center = (500, 500)
 
     screen.blit(game_over, game_over_rectangle)
     screen.blit(score, score_rectangle)
     screen.blit(play_again, play_again_rectangle)
+    screen.blit(instructions, instructions_rectangle)
     t_end = time.time() + 4
     while time.time() < t_end:
         pass
