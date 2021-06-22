@@ -80,26 +80,35 @@ def start_game2():
                 endgame(points)
                 break
 
-
+        # each time the player hits three targets they have 25% less time to click on the next targets
         if points % 3 == 0:
             speed /= 1.25
+
+        # spawns circle in a random location
         x = random.randint(20, 980)
         y = random.randint(20, 580)
+
         screen.fill(white)
         pygame.draw.circle(screen, black, (x, y), 40)
 
+        # displays the amount of points the player has
         score_font = pygame.font.Font('avgr45w (3).ttf', 20)
         score = score_font.render("Score: " + str(points), True, black)
         score_rectangle = score.get_rect()
         score_rectangle.center = (75, 25)
         screen.blit(score, score_rectangle)
 
+        #displays the amount of lives the player has
         lives_font = pygame.font.Font('avgr45w (3).ttf', 20)
         lives = lives_font.render("Lives: " + str(strikes + 1), True, black)
         lives_rectangle = lives.get_rect()
         lives_rectangle.center = (925, 25)
+
         screen.blit(lives, lives_rectangle)
 
+        # updates the screen
         pygame.display.update()
+
+        # allows the player time to position their mouse on the target
         while time.time() < t_end:
             pass
