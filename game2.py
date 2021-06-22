@@ -11,8 +11,8 @@ def start_game2():
     white = (255, 255, 255)
     screen = pygame.display.set_mode((1000, 600))
     screen.fill(white)
-    x = 0
-    y = 0
+    x = 12000
+    y = 12000
     speed = 4
     while True:
         for event in pygame.event.get():
