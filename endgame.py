@@ -1,5 +1,5 @@
 import pygame
-
+import time
 pygame.init()
 def endgame(points, function):
     # Sets the window screen to
@@ -33,17 +33,8 @@ def endgame(points, function):
     screen.blit(game_over, game_over_rectangle)
     screen.blit(score, score_rectangle)
     screen.blit(play_again, play_again_rectangle)
+    t_end = time.time() + 4
+    while time.time() < t_end:
+        pass
 
-    while True:
-        # Checks for mouse activity
-        for event in pygame.event.get():
-            if event.type == pygame.MOUSEMOTION:
-                # Gets the coordinates of the mouse
-                mouse_x = pygame.mouse.get_pos()[0]
-                mouse_y = pygame.mouse.get_pos()[1]
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                # Checks whether the start button is clicked
-                if (420 < mouse_x < 580 and 395 < mouse_y < 405):
-                    function
-
-        pygame.display.update()
+    pygame.display.update()
