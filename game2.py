@@ -79,6 +79,8 @@ def start_game2():
             if strikes < 0:
                 endgame(points)
                 break
+
+
         if points % 3 == 0:
             speed /= 1.25
         x = random.randint(20, 980)
