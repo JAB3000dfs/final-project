@@ -1,6 +1,7 @@
 import pygame
 import random
 import time
+from endgame import endgame
 
 def start_game2():
     points = 0
@@ -20,21 +21,21 @@ def start_game2():
                 mouse_y = pygame.mouse.get_pos()[1]
         black = (0, 0, 0)
         t_end = time.time() + speed
-        if x + 20 >= mouse_x >= x - 20 and y + 20 >= mouse_y >= y - 20:
+        if x + 40 >= mouse_x >= x - 40 and y + 40 >= mouse_y >= y - 40:
             points += 1000
             print(points)
         else:
             strikes -= 1
             if (strikes < 0):
                 screen.fill(black)
+                endgame()
                 break
         if points % 3 == 0:
             speed /= 1.25
         x = random.randint(20, 980)
         y = random.randint(20, 580)
         screen.fill(white)
-        pygame.draw.circle(screen, black, (x, y), 20)
+        pygame.draw.circle(screen, black, (x, y), 40)
         pygame.display.update()
         while time.time() < t_end:
             pass
-
