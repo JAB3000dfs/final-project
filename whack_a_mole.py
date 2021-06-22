@@ -10,7 +10,6 @@ def game():
     # Sets the window screen to
     white = (255, 255, 255)
     black = (0, 0, 0)
-    red = (255, 0, 0)
     screen = pygame.display.set_mode((1000, 600))
     screen.fill(white)
 

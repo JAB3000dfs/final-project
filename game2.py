@@ -1,38 +1,38 @@
+# Imports
 import pygame
 import random
 import time
 from endgame import endgame
 
-# Sets the window screen to
+# Sets the window screen to 1000 x 600 and fills it in
 white = (255, 255, 255)
 black = (0, 0, 0)
 red = (255, 0, 0)
 screen = pygame.display.set_mode((1000, 600))
 screen.fill(white)
 
-# Initial Page Setup
-# Font
+# Font Info
 title_font = pygame.font.Font('avgr45w (3).ttf', 100)
 text_font = pygame.font.Font('avgr45w (3).ttf', 40)
 text_font.set_bold(True)
 title_font.set_bold(True)
+
 # Title
 title = title_font.render("TITLE", True, black)
-
-# Create start button sprit
-start_button = text_font.render("START", True, black)
-
-# Create Instructions Button
-instructions_button = text_font.render("Instructions", True, black)
-
-instructions_button_rectangle = instructions_button.get_rect()
-instructions_button_rectangle.center = (500, 500)
-start_rectangle = start_button.get_rect()
-start_rectangle.center = (500, 400)
 title_rectangle = title.get_rect()
 title_rectangle.center = (500, 200)
 
-# Initial screen function
+# Start button
+start_button = text_font.render("START", True, black)
+start_rectangle = start_button.get_rect()
+start_rectangle.center = (500, 400)
+
+# Instructions button
+instructions_button = text_font.render("Instructions", True, black)
+instructions_button_rectangle = instructions_button.get_rect()
+instructions_button_rectangle.center = (500, 500)
+
+# Function that sets up initial screen
 def start_screen():
     screen.fill(white)
     screen.blit(instructions_button, instructions_button_rectangle)
@@ -40,30 +40,43 @@ def start_screen():
     screen.blit(title, title_rectangle)
 
 def start_game2():
-    points = 0
-    strikes = 3
-    mouse_x = 0
-    mouse_y = 0
-    white = (255, 255, 255)
-    screen = pygame.display.set_mode((1000, 600))
+
+    # Initial variables
+    points = 0          # number of points
+    strikes = 3         # number of strikes left
+    mouse_x = 0         # mouse_x position
+    mouse_y = 0         # mouse_y position
+    speed = 4           # how long ball stays on the screen
+
+    # Fill screen
     screen.fill(white)
+
+    # Initial x and y values for the ball (doesn't show up on the screen)
     x = 12000
     y = 12000
-    speed = 4
+
+
     while True:
         for event in pygame.event.get():
+            # Getting the mouse x and y values
             if event.type == pygame.MOUSEMOTION:
                 mouse_x = pygame.mouse.get_pos()[0]
                 mouse_y = pygame.mouse.get_pos()[1]
-        black = (0, 0, 0)
+
+        # Timer loop
         t_end = time.time() + speed
+
+        # If the mouse is in the same place as the ball, increase points
         if x + 40 >= mouse_x >= x - 40 and y + 40 >= mouse_y >= y - 40:
             points += 1000
             print(points)
+
+        # If not, decrease number of strikes left
         else:
             strikes -= 1
-            if (strikes < 0):
-                screen.fill(black)
+
+            # If strikes left < 0, show endgame screen
+            if strikes < 0:
                 endgame(points)
                 break
         if points % 3 == 0:
