@@ -20,6 +20,10 @@ instructions_font = pygame.font.Font('avgr45w (3).ttf', 20)
 # Displays start screen
 start_screen()
 
+#initialize mouse variables
+mouse_x = 12000
+mouse_y = 12000
+
 while True:
 
     for event in pygame.event.get():
