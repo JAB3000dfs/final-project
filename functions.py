@@ -3,6 +3,9 @@ import pygame
 import random
 import time
 
+# Initialise Pygame
+pygame.init()
+
 # Colour variables
 white = (255, 255, 255)
 black = (0, 0, 0)

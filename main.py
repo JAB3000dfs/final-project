@@ -1,9 +1,11 @@
 # Imports and initialising Pygame
 import pygame
-pygame.init()
 from sys import exit
 from functions import start_game
 from functions import start_screen
+
+# Initialise Pygame
+pygame.init()
 
 # Colour variables
 black = (0, 0, 0)
@@ -20,7 +22,7 @@ instructions_font = pygame.font.Font('avgr45w (3).ttf', 20)
 # Displays start screen
 start_screen()
 
-#initialize mouse variables
+# Initialize mouse variables
 mouse_x = 12000
 mouse_y = 12000
 
@@ -47,22 +49,26 @@ while True:
                 screen.fill(pastel_blue)
 
                 # Displays instructions
-                instructions = instructions_font.render("Click on the targets as fast as you can", True, black)
+                instructions_line_1 = "Click on the targets as fast as you can"
+                instructions = instructions_font.render(instructions_line_1, True, black)
                 instructions_rectangle = instructions.get_rect()
                 instructions_rectangle.center = (500, 100)
                 screen.blit(instructions, instructions_rectangle)
 
-                instructions2 = instructions_font.render("You have less and less time as the game progress's", True, black)
+                instructions_line_2 = "Click on the targets as fast as you can"
+                instructions2 = instructions_font.render(instructions_line_2, True, black)
                 instructions2_rectangle = instructions2.get_rect()
                 instructions2_rectangle.center = (500, 150)
                 screen.blit(instructions2, instructions2_rectangle)
 
-                instructions3 = instructions_font.render("If you don't click on the targets fast enough you lose a life", True, black)
+                instructions_line_3 = "If you don't click on the targets fast enough you lose a life"
+                instructions3 = instructions_font.render(instructions_line_3, True, black)
                 instructions3_rectangle = instructions3.get_rect()
                 instructions3_rectangle.center = (500, 200)
                 screen.blit(instructions3, instructions3_rectangle)
 
-                instructions4 = instructions_font.render("3 deaths and you're out", True, black)
+                instructions_line_4 = "3 deaths and you're out"
+                instructions4 = instructions_font.render(instructions_line_4, True, black)
                 instructions4_rectangle = instructions4.get_rect()
                 instructions4_rectangle.center = (500, 250)
                 screen.blit(instructions4, instructions4_rectangle)
