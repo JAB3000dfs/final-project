@@ -13,7 +13,7 @@ screen = pygame.display.set_mode((1000, 600))
 screen.fill(lavender)
 
 # Font Info
-title_font = pygame.font.Font('avgr45w (3).ttf', 80)
+title_font = pygame.font.Font('Questrial-Regular.ttf', 80)
 text_font = pygame.font.Font('avgr45w (3).ttf', 40)
 text_font.set_bold(True)
 title_font.set_bold(True)
