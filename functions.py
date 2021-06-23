@@ -34,6 +34,7 @@ instructions_button = text_font.render("Instructions", True, black)
 instructions_button_rectangle = instructions_button.get_rect()
 instructions_button_rectangle.center = (500, 500)
 
+
 # Function that sets up initial screen
 def start_screen():
     screen.fill(lavender)
@@ -41,9 +42,9 @@ def start_screen():
     screen.blit(start_button, start_rectangle)
     screen.blit(title, title_rectangle)
 
+
 # Function that creates game over screen
 def game_over(points):
-
     # Fills the screen in red
     screen.fill(red)
 
@@ -81,15 +82,15 @@ def game_over(points):
     # Updates the screen
     pygame.display.update()
 
+
 # Start game function
 def start_game():
-
     # Initial variables
-    points = 0          # number of points
-    strikes = 3         # number of strikes left
-    mouse_x = 0         # mouse_x position
-    mouse_y = 0         # mouse_y position
-    speed = 4           # how long ball stays on the screen
+    points = 0  # number of points
+    strikes = 3  # number of strikes left
+    mouse_x = 0  # mouse_x position
+    mouse_y = 0  # mouse_y position
+    speed = 4  # how long ball stays on the screen
 
     # Fill screen
     screen.fill(white)
