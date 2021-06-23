@@ -11,6 +11,7 @@ def game():
     # Colour variables
     white = (255, 255, 255)
     black = (0, 0, 0)
+    pastel_blue = (186, 230, 255)
 
     # Sets the window screen to 1000 x 600 and fills it in
     screen = pygame.display.set_mode((1000, 600))
@@ -35,12 +36,12 @@ def game():
                 mouse_y = pygame.mouse.get_pos()[1]
             if event.type == pygame.MOUSEBUTTONDOWN:
                 # If the start button is clicked, start game
-                if (420 < mouse_x < 580 and 395 < mouse_y < 405):
+                if (380 < mouse_x < 620 and 395 < mouse_y < 405):
                     start_game2()
 
                 # If the instructions button is clicked, display instructions
                 elif (370 < mouse_x < 630 and 480 < mouse_y < 520):
-                    screen.fill(white)
+                    screen.fill(pastel_blue)
                     instructions = instructions_font.render("Click on the targets as fast as you can", True, black)
                     instructions_rectangle = instructions.get_rect()
                     instructions_rectangle.center = (500, 100)
