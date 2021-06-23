@@ -69,7 +69,7 @@ while True:
                 screen.blit(back_home, back_home_rectangle)
 
             # If the back arrow is clicked, go to start screen
-            if (50 < mouse_x < 150 and 0 < mouse_y < 600):
+            if 50 < mouse_x < 150 and 0 < mouse_y < 600:
                 start_screen()
 
         # Updates the screen
