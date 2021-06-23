@@ -1,9 +1,9 @@
-# Imports
+# Imports and initialising Pygame
 import pygame
+pygame.init()
+
 from functions import start_game
 from functions import start_screen
-
-pygame.init()
 
 # game function
 def game():
