@@ -41,7 +41,7 @@ def start_screen():
     screen.blit(start_button, start_rectangle)
     screen.blit(title, title_rectangle)
 
-def endgame(points):
+def game_over(points):
     # Sets the window screen
     black = (0, 0, 0)
     red = (255, 0, 0)
@@ -115,9 +115,9 @@ def start_game():
         else:
             strikes -= 1
 
-            # If strikes left < 0, show endgame screen
+            # If strikes left < 0, show game over screen
             if strikes < 0:
-                endgame(points)
+                game_over(points)
                 break
 
         # each time the player hits three targets they have 25% less time to click on the next targets
