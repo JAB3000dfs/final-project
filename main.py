@@ -5,8 +5,6 @@ from sys import exit
 from functions import start_game
 from functions import start_screen
 
-# game function
-
 # Colour variables
 black = (0, 0, 0)
 pastel_blue = (186, 230, 255)
@@ -23,16 +21,17 @@ instructions_font = pygame.font.Font('avgr45w (3).ttf', 20)
 start_screen()
 
 while True:
-    # Checks for mouse activity
+    # Getting the mouse x and y values
     for event in pygame.event.get():
         if event.type == pygame.MOUSEMOTION:
-            # Gets the coordinates of the mouse
             mouse_x = pygame.mouse.get_pos()[0]
             mouse_y = pygame.mouse.get_pos()[1]
-        # allows user to close the game when clicking the x button
+
+        # Allows user to close the game when clicking the x button
         if event.type == pygame.QUIT:
             pygame.quit()
             exit()
+
         if event.type == pygame.MOUSEBUTTONDOWN:
             # If the start button is clicked, start game
             if (380 < mouse_x < 620 and 395 < mouse_y < 405):
@@ -41,7 +40,8 @@ while True:
             # If the instructions button is clicked, display instructions
             elif (370 < mouse_x < 630 and 480 < mouse_y < 520):
                 screen.fill(pastel_blue)
-                # displays instructions
+
+                # Displays instructions
                 instructions = instructions_font.render("Click on the targets as fast as you can", True, black)
                 instructions_rectangle = instructions.get_rect()
                 instructions_rectangle.center = (500, 100)
@@ -70,8 +70,6 @@ while True:
             # If the back arrow is clicked, go to start screen
             if (50 < mouse_x < 150 and 0 < mouse_y < 600):
                 start_screen()
-        #updates the screen
 
+        # Updates the screen
         pygame.display.update()
-
-
