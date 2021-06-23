@@ -112,7 +112,6 @@ def start_game():
         # If the mouse is in the same place as the ball, increase points
         if x + 40 >= mouse_x >= x - 40 and y + 40 >= mouse_y >= y - 40:
             points += 1000
-            print(points)
 
         # If not, decrease number of strikes left
         else:
