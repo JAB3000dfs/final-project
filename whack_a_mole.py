@@ -18,8 +18,6 @@ def game():
     screen.fill(white)
 
     # Font
-    title_font = pygame.font.Font('avgr45w (3).ttf', 100)
-    title_font.set_bold(True)
     text_font = pygame.font.Font('avgr45w (3).ttf', 40)
     text_font.set_bold(True)
     instructions_font = pygame.font.Font('avgr45w (3).ttf', 20)
