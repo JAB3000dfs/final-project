@@ -43,6 +43,7 @@ def start_screen():
 
 # Function that creates game over screen
 def game_over(points):
+
     # Fills the screen in red
     screen.fill(red)
 
