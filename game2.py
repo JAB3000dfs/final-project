@@ -7,12 +7,13 @@ from endgame import endgame
 # Sets the window screen to 1000 x 600 and fills it in
 white = (255, 255, 255)
 black = (0, 0, 0)
+lavender = (193, 186, 255)
 red = (255, 0, 0)
 screen = pygame.display.set_mode((1000, 600))
-screen.fill(white)
+screen.fill(lavender)
 
 # Font Info
-title_font = pygame.font.Font('avgr45w (3).ttf', 100)
+title_font = pygame.font.Font('avgr45w (3).ttf', 80)
 text_font = pygame.font.Font('avgr45w (3).ttf', 40)
 text_font.set_bold(True)
 title_font.set_bold(True)
@@ -34,7 +35,7 @@ instructions_button_rectangle.center = (500, 500)
 
 # Function that sets up initial screen
 def start_screen():
-    screen.fill(white)
+    screen.fill(lavender)
     screen.blit(instructions_button, instructions_button_rectangle)
     screen.blit(start_button, start_rectangle)
     screen.blit(title, title_rectangle)
