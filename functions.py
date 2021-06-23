@@ -49,8 +49,8 @@ def game_over(points):
     screen.fill(red)
 
     # Font
-    title_font = pygame.font.Font('avgr45w (3).ttf', 100)
-    title_font.set_bold(True)
+    game_over_title_font = pygame.font.Font('avgr45w (3).ttf', 100)
+    game_over_title_font.set_bold(True)
     score_font = pygame.font.Font('avgr45w (3).ttf', 40)
 
     # Title
