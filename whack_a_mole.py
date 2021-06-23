@@ -30,7 +30,7 @@ def game():
         # Checks for mouse activity
         for event in pygame.event.get():
             if event.type == pygame.MOUSEMOTION:
-                # Gets the coordinates of the mouse
+                #                 # Gets the coordinates of the mouse
                 mouse_x = pygame.mouse.get_pos()[0]
                 mouse_y = pygame.mouse.get_pos()[1]
             if event.type == pygame.MOUSEBUTTONDOWN:

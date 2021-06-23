@@ -89,7 +89,12 @@ def start_game2():
         x = random.randint(20, 980)
         y = random.randint(20, 580)
 
-        screen.fill(white)
+        three = random.randint(0, 255)
+        two = random.randint(0, 255)
+        one = random.randint(0, 255)
+        colour = (three, two, one)
+
+        screen.fill(colour)
         pygame.draw.circle(screen, black, (x, y), 40)
 
         # displays the amount of points the player has
