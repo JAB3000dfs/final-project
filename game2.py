@@ -18,7 +18,7 @@ text_font.set_bold(True)
 title_font.set_bold(True)
 
 # Title
-title = title_font.render("TITLE", True, black)
+title = title_font.render("TARGET PRACTICE", True, black)
 title_rectangle = title.get_rect()
 title_rectangle.center = (500, 200)
 
