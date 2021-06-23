@@ -4,11 +4,13 @@ import random
 import time
 from endgame import endgame
 
-# Sets the window screen to 1000 x 600 and fills it in
+# Colour variables
 white = (255, 255, 255)
 black = (0, 0, 0)
 lavender = (193, 186, 255)
 red = (255, 0, 0)
+
+# Sets the window screen to 1000 x 600 and fills it in
 screen = pygame.display.set_mode((1000, 600))
 screen.fill(lavender)
 
