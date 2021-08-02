@@ -158,4 +158,5 @@ def start_game():
         # Gives the player time to position their mouse on the target
         t_end = time.time() + speed
         while time.time() < t_end:
+
             pass
